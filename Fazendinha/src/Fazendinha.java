@@ -1,6 +1,6 @@
 public class Fazendinha {
     public static void main(String[] args){
-        double totalDeRacao;
+        double racaoVacas, racaoCavalos, racaoGalinhas, totalDeRacao;
 
         Vaca vacaMarrom = new Vaca();
         vacaMarrom.setNome("Vaca Marrom");
@@ -63,6 +63,8 @@ public class Fazendinha {
         System.out.println("Nome do animal: " + vacaMalhada.getNome());
         System.out.println("Cor do pelo/pena do animal: " + vacaMalhada.getCorPelo());
         System.out.println("Consumo medio diario do animal: " + vacaMalhada.getConsumo() + "kg");
+        
+        System.out.println("");
 
         System.out.println("Nome do animal: " + cavaloBege.getNome());
         System.out.println("Cor do pelo/pena do animal: " + cavaloBege.getCorPelo());
@@ -71,6 +73,8 @@ public class Fazendinha {
         System.out.println("Nome do animal: " + cavaloBranco.getNome());
         System.out.println("Cor do pelo/pena do animal: " + cavaloBranco.getCorPelo());
         System.out.println("Consumo medio diario do animal: " + cavaloBranco.getConsumo() + "kg");
+
+        System.out.println("");
 
         System.out.println("Nome do animal: " + galinhaAmarela.getNome());
         System.out.println("Cor do pelo/pena do animal: " + galinhaAmarela.getCorPena());
@@ -92,7 +96,12 @@ public class Fazendinha {
         System.out.println("Cor do pelo/pena do animal: " + galinhaPreta.getCorPena());
         System.out.println("Consumo medio diario do animal: " + galinhaPreta.getConsumo() + "g");
 
-        totalDeRacao = vacaMalhada.getConsumo() + vacaMarrom.getConsumo() + vacaPreta.getConsumo() + cavaloBege.getConsumo() + cavaloBranco.getConsumo() + galinhaAmarela.getConsumo()/1000 + galinhaMarrom.getConsumo()/1000 + galinhaCinza.getConsumo()/1000 + galinhaPintadinha.getConsumo()/1000 + galinhaPreta.getConsumo()/1000;
+        System.out.println("");
+
+        racaoVacas = vacaMalhada.getConsumo() + vacaMarrom.getConsumo() + vacaPreta.getConsumo();
+        racaoCavalos = cavaloBege.getConsumo() + cavaloBranco.getConsumo();
+        racaoGalinhas = (galinhaAmarela.getConsumo() + galinhaCinza.getConsumo() + galinhaMarrom.getConsumo() + galinhaPintadinha.getConsumo() + galinhaPreta.getConsumo())/1000;
+        totalDeRacao = racaoVacas + racaoCavalos + racaoGalinhas;
 
         System.out.println("O senhor precisara de " + totalDeRacao + "kg de racao por mes");
     }
