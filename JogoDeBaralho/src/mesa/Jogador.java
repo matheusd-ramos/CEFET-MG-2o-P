@@ -21,7 +21,7 @@ public class Jogador {
             if(maior.ehMaior(aux) != 1){
                 maior = aux;
             } else if(maior.ehMaior(maior) == 0){
-                if(maior.getNaipe() == "Ouros"){
+                if(maior.getNaipe().equals("Ouros")){
                     maior = aux;
                 }
             }

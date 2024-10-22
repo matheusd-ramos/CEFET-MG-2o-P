@@ -38,13 +38,19 @@ public class Baralho {
         int contador = 0;
         int contador2 = 0;
 
-        while(contador < nCartas){
-            if(baralho[contador] != null){
-                retorno[contador] = baralho[contador];
-                baralho[contador] = null;
+        while(contador < nCartas && contador2 < baralho.length){
+            if(baralho[contador2] != null){
+                retorno[contador] = baralho[contador2];
+                baralho[contador2] = null;
                 contador++;
             }
             contador2++;
+        }
+
+        if (contador < nCartas){
+            Carta[] resultado = new Carta[contador];
+            System.arraycopy(retorno, 0, resultado, 0, contador);
+            return resultado;
         }
 
         return retorno;
