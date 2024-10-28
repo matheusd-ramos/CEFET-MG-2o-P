@@ -20,6 +20,14 @@ public class Estoque {
         return false;
     }
 
+    public boolean verificarEstoque(int codigo){
+        for(int i=0; i<estoque.length; i++){
+            if(estoque[i] != null && codigo == estoque[i].getProduto().getCodigo())
+                return true;
+        }
+        return false;
+    }
+
     public Item[] getEstoque(){
         return estoque;
     }
