@@ -57,5 +57,7 @@ public class Caixa {
             }
     
         } while(codigo != 0);
+        
+        input.close();
     }
 }
