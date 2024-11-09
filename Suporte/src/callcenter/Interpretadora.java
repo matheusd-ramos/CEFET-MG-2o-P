@@ -19,4 +19,12 @@ public class Interpretadora {
             adicionarPalavra(token);
         }
     }
+    
+    public HashSet<String> getPalavraChave() {
+        return palavraChave;
+    }
+
+    public void setPalavraChave(HashSet<String> palavraChave) {
+        this.palavraChave = palavraChave;
+    }
 }
