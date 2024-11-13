@@ -6,6 +6,9 @@ public class Semana {
 
     public Semana(){
         semana = new Dia[5];
+        for(int i = 0; i < semana.length; i++) {
+            semana[i] = new Dia();
+        }
     }
 
     public Dia[] getSemana(){
@@ -16,7 +19,7 @@ public class Semana {
         return dias;
     }
 
-    public boolean addCompromissoAoDia(Compromisso compromisso, String dia, String horario){
+    public boolean addCompromissoAoDia(Compromisso compromisso, String dia, int horario){
         for(int i = 0; i < dias.length; i++){
             if((dias[i].toLowerCase()).equals(dia.toLowerCase())){
                 return semana[i].addCompromisso(compromisso, horario);
