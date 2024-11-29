@@ -5,6 +5,10 @@ import java.util.ArrayList;
 public class ControlePagamento {
     private ArrayList<Passivo> pagamentos;
 
+    public ControlePagamento(){
+        this.pagamentos = new ArrayList<>();
+    }
+
     public void adicionarPassivo(Passivo p){
         pagamentos.add(p);
     }

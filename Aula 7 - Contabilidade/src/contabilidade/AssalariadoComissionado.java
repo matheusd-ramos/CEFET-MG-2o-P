@@ -9,8 +9,9 @@ public class AssalariadoComissionado extends Comissionado {
         this.percentualBonus = percentualBonus;
     }
 
+    @Override
     public double getValorAPagar(int diaPgto, int mesPgto){
-        return SALARIO + SALARIO * (percentualBonus + 1) + super.getValorAPagar(diaPgto, mesPgto); // Poderia ser Passivo.SALARIO também
+        return SALARIO * (percentualBonus + 1) + super.getValorAPagar(diaPgto, mesPgto); // Poderia ser Passivo.SALARIO também
     }
 
 }
