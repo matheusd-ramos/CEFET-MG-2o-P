@@ -5,7 +5,7 @@ public class Chave {
 
     public Chave(int deslocamento){
         this.deslocamento = deslocamento;
-        String[] alfabeto = new String[26];
+        this.alfabeto = new String[26];
 
         for(int i = 0; i < 26; i++){
             alfabeto[i] = String.valueOf((char) ('a' + i));

@@ -7,10 +7,10 @@ public class CifraDeCesar {
 
     public String cifrar(String mensagem){
         String[] string = new String[mensagem.length()];
-        string = mensagem.split("");
 
         for(int i = 0; i < mensagem.length(); i++){
-            string[i] = String.valueOf((char) ((mensagem.charAt(i) - 'a' + chave.getDeslocamento()) % 26) + 'a') ;
+            int indiceNoAlfabeto = chave.buscarIndice(Character.toString(mensagem.charAt(i)));
+            string[i] = chave.getAlfabeto()[(indiceNoAlfabeto + chave.getDeslocamento()) % 26] ;
         }
 
         String resultado = String.join("", string);
@@ -19,17 +19,23 @@ public class CifraDeCesar {
 
     public String decifrar(String mensagem){
         String[] string = new String[mensagem.length()];
-        String c = new String();
         
         for(int i = 0; i < mensagem.length(); i++){
-            c = String.valueOf((char) (mensagem.charAt(i)));
-            if(chave.buscarIndice(c) > chave.getDeslocamento())
-                string[i] = String.valueOf((char) ((mensagem.charAt(i) - 'a' - chave.getDeslocamento()) + 26) + 'a');
-            
-            
+            int indiceNoAlfabeto = chave.buscarIndice(Character.toString(mensagem.charAt(i)));
+            string[i] = chave.getAlfabeto()[(indiceNoAlfabeto - chave.getDeslocamento() + 26) % 26];
         }
 
         String resultado = String.join("", string);
         return resultado;
     }
+
+    public String verificarMensagem (String mensagem) throws DecifragemInvalidaException{
+        String mensagemCifrada = cifrar(mensagem);
+        String mensagemDecifrada = decifrar(mensagemCifrada);
+
+        if(!mensagem.equals(mensagemDecifrada))
+            throw new DecifragemInvalidaException();
+
+        return "Decifragem aceita!";
+    } 
 }
