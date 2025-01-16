@@ -7,7 +7,6 @@ import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import javax.swing.JButton;
 import javax.swing.JFrame;
-import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import principal.Calculadora;
@@ -38,6 +37,7 @@ public class AppCalc extends JFrame implements ActionListener{
     private JButton bsoma;
     private Calculadora calculadora;
     private ArrayList<JButton> botoes;
+    private ArrayList<String> acoes;
 
     public AppCalc(){
         instanciarComponentes();
@@ -50,6 +50,7 @@ public class AppCalc extends JFrame implements ActionListener{
         visor = new JTextField();
         teclado = new JPanel();
         botoes = new ArrayList<>();
+        acoes = new ArrayList<>();
         
         bc = new JButton("C");
         botoes.add(bc);
@@ -71,7 +72,7 @@ public class AppCalc extends JFrame implements ActionListener{
         botoes.add(b6);
         bmult = new JButton("X");
         botoes.add(bmult);
-        bquad = new JButton("X^2");
+        bquad = new JButton("^2");
         botoes.add(bquad);
         b1 = new JButton("1");
         botoes.add(b1);
@@ -139,18 +140,49 @@ public class AppCalc extends JFrame implements ActionListener{
     public void actionPerformed(ActionEvent ae){
         String face = ((JButton)ae.getSource()).getText();
 
-        if(face.equals("/") || face.equals("+") || face.equals("*") || face.equals("%") || face.equals("X^2") || face.equals("-")){
-            calculadora.definirOperacao(face);
-        } else {
-            if(calculadora.getOperacao().equals("vazia")){
-                calculadora.concatenarOperando1(face);
-            } else {
-                calculadora.concatenarOperando2(face);
+        if(face.equals("C")){
+            calculadora = new Calculadora();
+            acoes.clear();
+            visor.setText("");
+            return;
+        }
+        
+        if(face.equals("CE")){
+            if (!acoes.isEmpty()) {
+                acoes.remove(acoes.size() - 1);
+                visor.setText(String.join("", acoes));
             }
+            calculadora.setOperando2("");
+            return;
         }
 
-        calculadora.concatenarOperando1(face);
-        visor.setText(calculadora.getVisor());
-    }
+        if(face.equals("=")){
+            calculadora.interpretarAcoes(acoes);
+            visor.setText(calculadora.getResultado());
+            acoes.clear();
+            acoes.add(calculadora.getResultado());
+            return;
+        }
 
+        if(face.equals("/") || face.equals("+") || face.equals("X") || 
+            face.equals("%") || face.equals("X^2") || face.equals("-")){
+
+            if(acoes.isEmpty()){
+                return;
+            }
+            
+            if(!acoes.get(acoes.size()-1).matches("[+\\-X/%.]")){
+                acoes.add(face);
+                visor.setText(String.join("", acoes));
+            }        
+        } else {
+            if (face.equals(".")) {
+                if (String.join("", acoes).contains(".")) {
+                    return;
+                }
+            }
+            acoes.add(face);
+            visor.setText(String.join("", acoes));
+        }
+    }
 }
