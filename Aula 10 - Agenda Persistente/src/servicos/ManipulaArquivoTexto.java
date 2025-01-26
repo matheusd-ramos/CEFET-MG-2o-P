@@ -27,7 +27,7 @@ public class ManipulaArquivoTexto {
         }
     }
 
-    public void gravarContato(HashMap<String, Contato> contatos) {
+    public void gravarContatos(HashMap<String, Contato> contatos) {
         try {
             for (Contato contato : contatos.values()) {
                 gravador.format("Nome: %s%nTelefone: %s%nEmail: %s%nEndereço: %s%n%n", contato.getNome(), 
@@ -56,36 +56,38 @@ public class ManipulaArquivoTexto {
         ArrayList<Contato> contatos = new ArrayList<>();
         
         try {
-            while(leitor.hasNextLine()) {
+            while (leitor.hasNextLine()) {
                 String linha = leitor.nextLine();
                 Contato aux = new Contato();
 
                 if (linha.startsWith("Nome: ")) {
-                    aux.setNome(linha.substring(6)); 
+                    aux.setNome(linha.substring(6));
+                } else {
+                    continue;
                 }
 
                 if (leitor.hasNextLine()) {
                     linha = leitor.nextLine();
                     if (linha.startsWith("Telefone: ")) {
-                        aux.setTelefone(linha.substring(10)); 
+                        aux.setTelefone(linha.substring(10));
                     }
                 }
 
                 if (leitor.hasNextLine()) {
                     linha = leitor.nextLine();
-                    if (linha.startsWith("E-mail: ")) {
-                        aux.setEmail(linha.substring(8)); 
+                    if (linha.startsWith("Email: ")) {
+                        aux.setEmail(linha.substring(7));
                     }
                 }
 
                 if (leitor.hasNextLine()) {
                     linha = leitor.nextLine();
                     if (linha.startsWith("Endereço: ")) {
-                        aux.setEndereco(linha.substring(10)); 
+                        aux.setEndereco(linha.substring(10));
                     }
                 }
 
-                contatos.add(aux); 
+                contatos.add(aux);
             } 
         } catch (NoSuchElementException ns) {
             System.err.println("Arquivo formado incorretamente");

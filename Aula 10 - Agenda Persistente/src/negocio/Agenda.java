@@ -3,8 +3,12 @@ package negocio;
 import java.util.HashMap;
 
 public class Agenda {
-    
+
     private HashMap<String, Contato> contatos;
+
+    public Agenda() {
+       contatos = new HashMap<>();
+    }
 
     public boolean incluirContato(Contato contato){
         if(contatos.put(contato.getNome(), contato) == null){
@@ -13,11 +17,11 @@ public class Agenda {
         return false;
     }
 
-    public boolean removerContato(Contato contato){
-        if(contatos.remove(contato.getNome()) != null){
-            return true;
+    public boolean removerContato(String nome){
+        if(contatos.remove(nome) == null){
+            return false;
         }
-        return false;
+        return true;
     }
 
     public boolean existeContato(String nome){
@@ -30,4 +34,14 @@ public class Agenda {
         }
         return contatos.get(nome);
     }
+
+    public HashMap<String, Contato> getContatos() {
+        return contatos;
+    }
+
+    public void setContatos(HashMap<String, Contato> contatos) {
+        this.contatos = contatos;
+    }
+
+    
 }

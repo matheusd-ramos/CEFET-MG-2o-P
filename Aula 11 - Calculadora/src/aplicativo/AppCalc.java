@@ -158,23 +158,44 @@ public class AppCalc extends JFrame implements ActionListener{
 
         if(face.equals("=")){
             calculadora.interpretarAcoes(acoes);
-            visor.setText(calculadora.getResultado());
+            String resultado = calculadora.getResultado();
+            visor.setText(resultado);
             acoes.clear();
-            acoes.add(calculadora.getResultado());
+            acoes.add(resultado);
             return;
         }
 
         if(face.equals("/") || face.equals("+") || face.equals("X") || 
-            face.equals("%") || face.equals("X^2") || face.equals("-")){
+            face.equals("%") || face.equals("-")){
 
             if(acoes.isEmpty()){
                 return;
             }
             
-            if(!acoes.get(acoes.size()-1).matches("[+\\-X/%.]")){
+            if(acoes.get(acoes.size()-1).matches("[+\\-X/%.]")){
+                return;
+            } else {
+                calculadora.interpretarAcoes(acoes);
+                String resultado = calculadora.getResultado();
+                acoes.clear();
+                acoes.add(resultado);
                 acoes.add(face);
-                visor.setText(String.join("", acoes));
-            }        
+                visor.setText(resultado + " " + face);
+            }
+        } else if (face.equals("X^2")) {
+            if (!acoes.isEmpty()) {
+                calculadora.interpretarAcoes(acoes);
+                String resultado = calculadora.getResultado();
+                double valor = Double.parseDouble(resultado);
+                double quadrado = Math.pow(valor, 2);
+                visor.setText(String.valueOf(quadrado));
+                acoes.clear();
+                acoes.add(String.valueOf(quadrado));
+            } else {
+                visor.setText("0");
+                acoes.clear();
+                acoes.add("0");
+            }
         } else {
             if (face.equals(".")) {
                 if (String.join("", acoes).contains(".")) {
