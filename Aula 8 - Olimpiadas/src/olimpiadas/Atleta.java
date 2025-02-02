@@ -1,3 +1,4 @@
+package olimpiadas;
 public class Atleta extends Membro{
 
     private String modalidade;

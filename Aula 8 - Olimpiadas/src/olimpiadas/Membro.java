@@ -1,3 +1,4 @@
+package olimpiadas;
 public abstract class Membro {
     protected String nome;
     protected String sobrenome;

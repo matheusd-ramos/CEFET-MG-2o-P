@@ -1,3 +1,4 @@
+package olimpiadas;
 public class Tecnico extends Membro{
 
     private String modalidade;

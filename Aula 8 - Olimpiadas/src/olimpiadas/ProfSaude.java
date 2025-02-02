@@ -1,3 +1,4 @@
+package olimpiadas;
 public class ProfSaude extends Membro {
 
     private String funcao;

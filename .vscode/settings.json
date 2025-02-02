@@ -1,0 +1,14 @@
+{
+    "java.project.sourcePaths": [
+        "Planner/src/planner",
+        "Aula 8 - Olimpiadas/src",
+        "Aula 7 - Contabilidade/src/contabilidade",
+        "Aula 6 - Espaco2D/src",
+        "Aula 5- Planner/src/planner",
+        "Aula 5 - Planner/src/planner",
+        "Aula 2 - JogoDeBaralho/src/mesa"
+    ],
+    "java.project.referencedLibraries": [],
+    "java.configuration.updateBuildConfiguration": "interactive",
+    "java.debug.settings.onBuildFailureProceed": true
+}
