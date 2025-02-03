@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<Pane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="550.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.principal.JanelaController">
+   <children>
+      <Pane layoutX="13.0" layoutY="14.0" prefHeight="112.0" prefWidth="374.0">
+         <children>
+            <Label layoutX="14.0" layoutY="14.0" prefHeight="17.0" prefWidth="122.0" text="Calcule o resultado" />
+            <Label fx:id="labelOp1" layoutX="34.0" layoutY="41.0" prefHeight="40.0" prefWidth="40.0" text="99">
+               <font>
+                  <Font size="33.0" />
+               </font>
+            </Label>
+            <Label fx:id="labelOperacao" layoutX="88.0" layoutY="41.0" prefHeight="49.0" prefWidth="24.0" text="*">
+               <font>
+                  <Font size="33.0" />
+               </font>
+            </Label>
+            <Label fx:id="labelOp2" layoutX="129.0" layoutY="42.0" prefHeight="40.0" prefWidth="40.0" text="99">
+               <font>
+                  <Font size="33.0" />
+               </font>
+            </Label>
+            <Label layoutX="182.0" layoutY="42.0" prefHeight="40.0" prefWidth="24.0" text="=">
+               <font>
+                  <Font size="33.0" />
+               </font>
+            </Label>
+            <Label layoutX="228.0" layoutY="42.0" prefHeight="40.0" prefWidth="15.0" text="(">
+               <font>
+                  <Font size="33.0" />
+               </font>
+            </Label>
+            <TextField fx:id="textField" layoutX="243.0" layoutY="55.0" prefHeight="25.0" prefWidth="78.0" />
+            <Label layoutX="326.0" layoutY="42.0" prefHeight="40.0" prefWidth="15.0" text=")">
+               <font>
+                  <Font size="33.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Separator layoutX="13.0" layoutY="125.0" prefHeight="0.0" prefWidth="374.0" />
+      <Separator layoutX="13.0" layoutY="460.0" prefHeight="0.0" prefWidth="374.0" />
+      <Button fx:id="btn_7" layoutX="123.0" layoutY="221.0" mnemonicParsing="false" onAction="#onAction" prefHeight="40.0" prefWidth="40.0" text="7">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+      <Button fx:id="btn_8" layoutX="180.0" layoutY="221.0" mnemonicParsing="false" onAction="#onAction" prefHeight="40.0" prefWidth="40.0" text="8">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+      <Button fx:id="btn_9" layoutX="238.0" layoutY="221.0" mnemonicParsing="false" onAction="#onAction" prefHeight="40.0" prefWidth="40.0" text="9">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+      <Button fx:id="btn_4" layoutX="123.0" layoutY="275.0" mnemonicParsing="false" onAction="#onAction" prefHeight="40.0" prefWidth="40.0" text="4">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+      <Button fx:id="btn_5" layoutX="180.0" layoutY="275.0" mnemonicParsing="false" onAction="#onAction" prefHeight="40.0" prefWidth="40.0" text="5">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+      <Button fx:id="btn_6" layoutX="238.0" layoutY="275.0" mnemonicParsing="false" onAction="#onAction" prefHeight="40.0" prefWidth="40.0" text="6">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+      <Button fx:id="btn_1" layoutX="123.0" layoutY="329.0" mnemonicParsing="false" onAction="#onAction" prefHeight="40.0" prefWidth="40.0" text="1">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+      <Button fx:id="btn_2" layoutX="180.0" layoutY="329.0" mnemonicParsing="false" onAction="#onAction" prefHeight="40.0" prefWidth="40.0" text="2">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+      <Button fx:id="btn_3" layoutX="238.0" layoutY="329.0" mnemonicParsing="false" onAction="#onAction" prefHeight="40.0" prefWidth="40.0" text="3">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+      <Button fx:id="btn_0" layoutX="122.0" layoutY="383.0" mnemonicParsing="false" onAction="#onAction" prefHeight="40.0" prefWidth="40.0" text="0">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+      <Button fx:id="btn_testar" layoutX="179.0" layoutY="383.0" mnemonicParsing="false" onAction="#onAction" prefHeight="40.0" prefWidth="98.0" text="Testar">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+      <Label fx:id="labelPontos" layoutX="19.0" layoutY="494.0" prefHeight="17.0" prefWidth="161.0" text="Você está com 0 pontos">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Label>
+      <Button fx:id="btn_passar" layoutX="180.0" layoutY="490.0" mnemonicParsing="false" onAction="#onAction" text="Passar">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Button>
+      <Button fx:id="btn_reiniciar" layoutX="254.0" layoutY="490.0" mnemonicParsing="false" onAction="#onAction" text="Reiniciar">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Button>
+      <Button fx:id="btn_sair" layoutX="343.0" layoutY="490.0" mnemonicParsing="false" onAction="#onAction" text="Sair">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Button>
+      <Label fx:id="labelMSG" alignment="CENTER" contentDisplay="CENTER" layoutX="13.0" layoutY="137.0" prefHeight="60.0" prefWidth="374.0" text="Bem vindo(a) ao Jogo dos Fatos! Tente calcular o resultado da operação acima. PS: Para as divisões, utilize até duas casas decimais. Boa sorte! " textAlignment="CENTER" wrapText="true" />
+      <Button fx:id="btn_menos" layoutX="300.0" layoutY="383.0" mnemonicParsing="false" onAction="#onAction" prefHeight="40.0" prefWidth="40.0" text="-">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Button>
+      <Button fx:id="btn_ponto" layoutX="60.0" layoutY="383.0" mnemonicParsing="false" onAction="#onAction" prefHeight="40.0" prefWidth="40.0" text=".">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Button>
+   </children>
+</Pane>
