@@ -1,0 +1,17 @@
+{
+    "java.jdt.ls.vmargs": "--module-path \"c:/Users/mathe/Documents/JavaLibs/javafx-sdk-23.0.2/lib\" --add-modules javafx.controls,javafx.fxml",
+    "java.project.referencedLibraries": [
+        "c:\\Users\\mathe\\Documents\\JavaLibs\\javafx-sdk-23.0.2\\lib\\javafx.controls.jar",
+        "c:\\Users\\mathe\\Documents\\JavaLibs\\javafx-sdk-23.0.2\\lib\\javafx.media.jar",
+        "c:\\Users\\mathe\\Documents\\JavaLibs\\javafx-sdk-23.0.2\\lib\\javafx.swing.jar",
+        "c:\\Users\\mathe\\Documents\\JavaLibs\\javafx-sdk-23.0.2\\lib\\javafx.web.jar",
+        "c:\\Users\\mathe\\Documents\\JavaLibs\\javafx-sdk-23.0.2\\lib\\javafx.fxml.jar",
+        "c:\\Users\\mathe\\Documents\\JavaLibs\\javafx-sdk-23.0.2\\lib\\javafx.graphics.jar",
+        "c:\\Users\\mathe\\Documents\\JavaLibs\\javafx-sdk-23.0.2\\lib\\javafx.base.jar",
+        "c:\\Users\\mathe\\Documents\\JavaLibs\\javafx-sdk-23.0.2\\lib\\javafx-swt.jar"
+    ],
+    "java.project.sourcePaths": [
+        "src"
+    ],
+    "java.project.outputPath": "bin"
+}
